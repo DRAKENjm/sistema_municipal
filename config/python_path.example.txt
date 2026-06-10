@@ -1,0 +1,13 @@
+C:\Users\TuUsuario\AppData\Local\Programs\Python\Python311\python.exe
+
+INSTRUCCIONES:
+1. Copia este archivo y renómbralo a: python_path.txt
+2. Abre CMD y ejecuta: where python
+3. Copia la ruta completa de python.exe
+4. Pega la ruta en python_path.txt (primera línea)
+5. NO subas python_path.txt a GitHub (está en .gitignore)
+
+Ejemplos de rutas comunes:
+- Windows: C:\Users\TuUsuario\AppData\Local\Programs\Python\Python311\python.exe
+- Windows (Python.org): C:\Python311\python.exe
+- Windows (Anaconda): C:\Users\TuUsuario\anaconda3\python.exe

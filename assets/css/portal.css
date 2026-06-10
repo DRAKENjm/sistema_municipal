@@ -1,0 +1,719 @@
+/**
+ * Portal de Postulantes - Diseño Profesional
+ * Sistema SIGDOC-ML
+ */
+
+/* ============================================
+   VARIABLES Y COLORES
+============================================ */
+:root {
+    --portal-primary: #1a3a5c;
+    --portal-secondary: #e8a020;
+    --portal-success: #198754;
+    --portal-info: #0dcaf0;
+    --portal-warning: #ffc107;
+    --portal-danger: #dc3545;
+    --portal-light: #f8f9fa;
+    --portal-dark: #212529;
+    --portal-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --portal-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --portal-shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* ============================================
+   ESTILOS GENERALES
+============================================ */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* ============================================
+   TOPBAR MEJORADA
+============================================ */
+.portal-topbar {
+    background: linear-gradient(135deg, #1a3a5c 0%, #2c5282 100%);
+    color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.portal-topbar .container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.portal-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.portal-brand:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.portal-brand .brand-icon {
+    font-size: 2.5rem;
+    color: var(--portal-secondary);
+    filter: drop-shadow(0 2px 4px rgba(232, 160, 32, 0.5));
+}
+
+.portal-brand .brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.portal-brand .brand-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.portal-brand .brand-subtitle {
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: 1;
+    color: var(--portal-secondary);
+    opacity: 0.95;
+}
+
+.portal-nav {
+    display: flex;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.portal-nav .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.portal-nav .nav-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.portal-nav .nav-link.active {
+    background: var(--portal-secondary);
+    color: var(--portal-dark);
+    box-shadow: 0 4px 8px rgba(232, 160, 32, 0.4);
+}
+
+.portal-user-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto;
+}
+
+.portal-user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+}
+
+.portal-user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--portal-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--portal-dark);
+}
+
+.portal-user-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.btn-logout {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   CONTENEDOR PRINCIPAL
+============================================ */
+.portal-content {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1.5rem 4rem;
+}
+
+/* ============================================
+   HERO SECTION (Página principal)
+============================================ */
+.portal-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    padding: 4rem 2rem;
+    border-radius: 24px;
+    margin-bottom: 3rem;
+    box-shadow: var(--portal-shadow-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.portal-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.portal-hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.portal-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.portal-hero p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    margin-bottom: 2rem;
+}
+
+/* ============================================
+   CARDS Y CONTENEDORES
+============================================ */
+.portal-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: var(--portal-shadow);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.portal-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--portal-shadow-lg);
+}
+
+.portal-card-header {
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, #f8faff 0%, #eef2fb 100%);
+    border-bottom: 2px solid rgba(26, 58, 92, 0.1);
+    border-radius: 20px 20px 0 0;
+}
+
+.portal-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--portal-primary);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* ============================================
+   STATS CARDS
+============================================ */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card-portal {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.75rem;
+    box-shadow: var(--portal-shadow);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--portal-primary);
+}
+
+.stat-card-portal:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--portal-shadow-lg);
+}
+
+.stat-card-portal.orange { border-left-color: var(--portal-warning); }
+.stat-card-portal.green { border-left-color: var(--portal-success); }
+.stat-card-portal.blue { border-left-color: var(--portal-info); }
+.stat-card-portal.purple { border-left-color: #764ba2; }
+
+.stat-card-portal .stat-icon {
+    font-size: 2.5rem;
+    opacity: 0.2;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.stat-card-portal .stat-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--portal-primary);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card-portal .stat-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* ============================================
+   CONVOCATORIAS
+============================================ */
+.convocatoria-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--portal-shadow);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.convocatoria-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--portal-shadow-lg);
+    border-color: var(--portal-primary);
+}
+
+.convocatoria-header {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8faff 0%, #eef2fb 100%);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.convocatoria-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--portal-primary);
+    margin-bottom: 0.5rem;
+}
+
+.convocatoria-meta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.convocatoria-body {
+    padding: 1.5rem;
+}
+
+.convocatoria-footer {
+    padding: 1rem 1.5rem;
+    background: #f8f9fa;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ============================================
+   BADGES Y ESTADOS
+============================================ */
+.badge-portal {
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.badge-portal.success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.badge-portal.warning {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.badge-portal.danger {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.badge-portal.info {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.badge-portal.secondary {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+/* ============================================
+   BOTONES
+============================================ */
+.btn-portal {
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.btn-portal-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-portal-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.6);
+    color: #fff;
+}
+
+.btn-portal-secondary {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.btn-portal-secondary:hover {
+    background: #e5e7eb;
+    transform: translateY(-2px);
+}
+
+.btn-portal-success {
+    background: var(--portal-success);
+    color: #fff;
+}
+
+.btn-portal-warning {
+    background: var(--portal-warning);
+    color: var(--portal-dark);
+}
+
+.btn-portal-danger {
+    background: var(--portal-danger);
+    color: #fff;
+}
+
+/* ============================================
+   ALERTAS
+============================================ */
+.alert-portal {
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    border: none;
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.alert-portal .alert-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.alert-portal-success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.alert-portal-info {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.alert-portal-warning {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.alert-portal-danger {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* ============================================
+   TIMELINE / PROCESO
+============================================ */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e5e7eb;
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.4rem;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid var(--portal-primary);
+}
+
+.timeline-item.completed::before {
+    background: var(--portal-success);
+    border-color: var(--portal-success);
+}
+
+.timeline-item.active::before {
+    background: var(--portal-warning);
+    border-color: var(--portal-warning);
+    box-shadow: 0 0 0 4px rgba(255, 193, 7, 0.2);
+}
+
+/* ============================================
+   PROGRESS BAR MEJORADO
+============================================ */
+.progress-portal {
+    height: 12px;
+    border-radius: 50px;
+    background: #e5e7eb;
+    overflow: hidden;
+}
+
+.progress-portal-fill {
+    height: 100%;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    transition: width 0.6s ease;
+}
+
+.progress-portal-fill.success {
+    background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+}
+
+.progress-portal-fill.warning {
+    background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
+}
+
+.progress-portal-fill.danger {
+    background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
+}
+
+/* ============================================
+   EMPTY STATE
+============================================ */
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: var(--portal-shadow);
+}
+
+.empty-state-icon {
+    font-size: 5rem;
+    opacity: 0.15;
+    margin-bottom: 1.5rem;
+}
+
+.empty-state h5 {
+    color: var(--portal-primary);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.empty-state p {
+    color: #6c757d;
+    margin-bottom: 2rem;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 768px) {
+    .portal-topbar .container {
+        flex-wrap: wrap;
+    }
+    
+    .portal-nav {
+        order: 3;
+        width: 100%;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+    }
+    
+    .portal-hero h1 {
+        font-size: 1.75rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .portal-user-name {
+        display: none;
+    }
+}
+
+/* ============================================
+   ANIMACIONES
+============================================ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+
+/* ============================================
+   NOTIFICACIONES DE CVS PENDIENTES
+============================================ */
+.border-warning {
+    border-color: #ffc107 !important;
+}
+
+.border-3 {
+    border-width: 3px !important;
+}
+
+/* Animación sutil para el icono de campana */
+@keyframes bellRing {
+    0%, 100% { transform: rotate(0deg); }
+    10%, 30% { transform: rotate(-10deg); }
+    20%, 40% { transform: rotate(10deg); }
+}
+
+.bi-bell-fill.text-warning {
+    animation: bellRing 2s ease-in-out infinite;
+    filter: drop-shadow(0 2px 4px rgba(255, 193, 7, 0.4));
+}
+
+/* Badge con animación sutil */
+.badge.bg-warning {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Badge de notificación flotante en convocatorias */
+.badge.rounded-pill.bg-warning {
+    background: linear-gradient(135deg, #ffc107 0%, #ffb300 100%) !important;
+    box-shadow: 0 3px 10px rgba(255, 193, 7, 0.5);
+    border: 2px solid #fff;
+    font-weight: 700;
+}
+
+.badge.rounded-pill.bg-warning:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.7);
+}
+
+/* Mejora visual del alert de CVs pendientes */
+.alert-warning {
+    border-left: 4px solid #ff9800;
+    background: linear-gradient(135deg, #fff3cd 0%, #fff9e6 100%);
+}
+
+.alert-warning .btn-warning {
+    box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);
+    transition: all 0.3s ease;
+}
+
+.alert-warning .btn-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.5);
+}

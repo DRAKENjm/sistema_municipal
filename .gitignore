@@ -1,0 +1,210 @@
+# ============================================================
+# .gitignore - Municipalidad Provincial de Yauli
+# Sistema de Gestión Documental con Machine Learning
+# Archivos y carpetas que NO se deben subir a GitHub
+# ============================================================
+
+# ── CONFIGURACIÓN LOCAL Y SENSIBLE ──
+# Cada usuario/servidor tendrá su propia configuración
+config/database.php
+config/python_path.txt
+
+# ── ARCHIVOS SUBIDOS POR USUARIOS ──
+# No subir documentos ni CVs (pueden contener datos sensibles/GDPR)
+uploads/
+uploads/*
+uploads/documentos/*
+uploads/curriculums/*
+uploads/temp/*
+
+# Mantener la estructura de carpetas pero sin contenido
+!uploads/.gitkeep
+!uploads/.htaccess
+!uploads/documentos/
+!uploads/curriculums/
+!uploads/temp/
+
+# ── LOGS Y ARCHIVOS TEMPORALES ──
+*.log
+*.tmp
+*.temp
+logs/
+temp/
+cache/
+ml/*.log
+ml/temp_*.json
+
+# ── SISTEMA OPERATIVO ──
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+ehthumbs.db
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+*~
+.directory
+.fuse_hidden*
+
+# ── IDEs Y EDITORES ──
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# PhpStorm / IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# NetBeans
+nbproject/
+nbbuild/
+
+# Eclipse
+.project
+.buildpath
+.settings/
+
+# Atom
+.atom/
+
+# ── PHP ──
+# Composer (si lo usas en el futuro)
+vendor/
+composer.lock
+composer.phar
+
+# ── PYTHON ──
+# Entornos virtuales
+venv/
+env/
+ENV/
+.venv
+virtualenv/
+
+# Compilados y cache de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.pyc
+*.pyo
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PyInstaller
+*.manifest
+*.spec
+
+# ── BASE DE DATOS ──
+# No subir backups de BD (pueden ser muy pesados y contener datos sensibles)
+*.sql.gz
+*.sql.zip
+*.sql.bak
+backups/
+backup_*.sql
+dump_*.sql
+
+# EXCEPCIÓN: Sí subir el SQL inicial (estructura + datos de prueba)
+!municipalidad_sigd_ml.sql
+
+# ── NODE MODULES (si usas npm/yarn en el futuro) ──
+node_modules/
+package-lock.json
+yarn.lock
+.npm
+.yarn
+.pnp.*
+
+# ── VARIABLES DE ENTORNO Y SECRETOS ──
+.env
+.env.local
+.env.production
+.env.development
+.env.test
+*.key
+*.pem
+*.cert
+secrets.json
+
+# ── ARCHIVOS DE SESIÓN PHP ──
+sessions/
+php_sessions/
+
+# ── PDFs Y REPORTES TEMPORALES ──
+reportes_temp/
+temp_reports/
+*.pdf.tmp
+
+# ── ARCHIVOS DE CONFIGURACIÓN LOCAL ──
+# Configuraciones específicas del desarrollador
+config.local.php
+database.local.php
+local_settings.php
+
+# ── ARCHIVOS DE PRUEBA Y DESARROLLO ──
+test.php
+prueba.php
+debug.php
+testing/
+sandbox/
+
+# ── ARCHIVOS COMPILADOS ──
+*.class
+*.o
+*.obj
+*.exe
+
+# ── ARCHIVOS DE RESPALDO ──
+*.bak
+*.backup
+*.old
+*~
+
+# ── CERTIFICADOS SSL (si los generas localmente) ──
+*.crt
+*.key
+ssl/
+
+# ── ARCHIVOS GRANDES Y MULTIMEDIA ──
+*.iso
+*.dmg
+*.tar.gz
+*.rar
+*.7z
+
+# ── ESPECÍFICO DEL PROYECTO ──
+# Archivos generados por el sistema ML
+ml/models/*.pkl
+ml/models/*.joblib
+ml/cache/
+
+# Archivos de configuración de producción
+config/production/
+
+# ============================================================
+# IMPORTANTE: Este .gitignore protege:
+# - Credenciales de base de datos
+# - Archivos subidos por usuarios (documentos, CVs)
+# - Configuraciones locales
+# - Datos sensibles y personales
+# 
+# Siempre revisar antes de hacer commit:
+# git status
+# ============================================================
