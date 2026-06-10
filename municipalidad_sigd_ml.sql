@@ -6,18 +6,8 @@
 -- Base de datos: municipalidad_sigd_ml
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
--- Generado: 09-06-2026
--- ACTUALIZADO: 10-06-2026 - Migración limpia con todas las tablas
--- 
--- ============================================================
--- INSTRUCCIONES DE INSTALACIÓN:
--- ============================================================
--- 1. Abrir phpMyAdmin en tu nuevo servidor (http://localhost/phpmyadmin)
--- 2. Clic en la pestaña "Importar"
--- 3. Seleccionar este archivo: municipalidad_sigd_ml.sql
--- 4. Clic en "Continuar"
--- 5. Verificar que la base de datos se creó correctamente
---
+
+
 -- NOTA: Este script eliminará y recreará todas las tablas
 --       para asegurar una instalación limpia.
 -- ============================================================
