@@ -1,4 +1,4 @@
-# 🏛️ Sistema de Gestión Documental - Municipalidad Provincial de Yauli
+# Sistema de Gestión Documental - Municipalidad Provincial de Yau
 
 [![PHP](https://img.shields.io/badge/PHP-8.0+-777BB4?style=flat&logo=php)](https://www.php.net/)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?style=flat&logo=mysql&logoColor=white)](https://www.mysql.com/)
@@ -7,7 +7,7 @@
 
 ---
 
-## 📋 Descripción
+## Descripción
 
 Sistema integral desarrollado para la **Municipalidad Provincial de Yauli** que automatiza la gestión de trámites administrativos y la selección de personal mediante Machine Learning.
 
@@ -166,7 +166,7 @@ La Municipalidad Provincial de Yauli presentaba deficiencias en la gestión de t
    **Primera vez:** Usa el usuario administrador
    ```
    Usuario: admin
-   Contraseña: Admin123@
+   Contraseña: admin123
    ```
 
 ---
@@ -177,11 +177,11 @@ Estos usuarios están incluidos en el SQL inicial (`municipalidad_sigd_ml.sql`):
 
 | Usuario     | Contraseña | Rol                 | Permisos |
 |-------------|------------|---------------------|----------|
-| admin       | Admin123@  | Administrador       | Acceso total (técnico) + Bitácora |
+| admin       | admin123 | Administrador       | Acceso total (técnico) + Bitácora |
 | mesapartes  | 12345678   | Mesa de Partes      | Documentos, Expedientes |
 | resp.area   | 12345678   | Responsable Área    | Docs/Expedientes de su área |
-| rrhh        | 12345678   | Recursos Humanos    | Convocatorias, ML, Evaluaciones |
-| JORGE       | 12345678   | Jefe General        | Acceso operativo completo |
+| rrhh        | recursos123   | Recursos Humanos    | Convocatorias, ML, Evaluaciones |
+| JORGE       | admin234  | Jefe General        | Acceso operativo completo |
 
 ⚠️ **IMPORTANTE: Cambiar todas las contraseñas en producción**
 
@@ -535,7 +535,7 @@ post_max_size = 10M
 
 ## 📞 Soporte y Contacto
 
-**Sistema:** Municipalidad Provincial de Yauli  
+**Sistema:** Municipalidad Provincial de Yau
 **Versión:** 1.0.0  
 **Última actualización:** Junio 2026  
 **Tecnologías:** PHP 8.0+, MySQL 8.0+, Python 3.8+, Machine Learning  
@@ -560,5 +560,5 @@ MIT License - Ver [LICENSE](LICENSE)
 
 ---
 
-**Desarrollado para la Municipalidad Provincial de Yauli** 🇵🇪  
-*Automatizando procesos, mejorando vidas* ✨
+**Desarrollado para la Municipalidad Provincial de Yau** 🇵🇪  
+*Automatizando procesos, mejorando vidas* ✨ Jose Maldoando 2026
